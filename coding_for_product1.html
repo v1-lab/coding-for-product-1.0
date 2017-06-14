@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var titleURL = {
+  title: 'really, really, really long title that will be chopped off',
+  link: 'example.com'
+};
+  var text_title = "";
+	var text_url = "";
+function matching(text_title, text_url) {
+
+  if ((text_title == titleURL.title) && (text_url == titleURL.link)) {
+    text_title = titleURL.title;
+    text_url = titleURL.link;
+    //console.log(text_title, text_url);
+    if (text_title.length > 50) {
+      text_title = text_title.substring(0, 50) + '...';
+      console.log('<a href="' + text_url + '">'  + text_title + '</a>');
+    }
+  }
+  else {
+    console.log("please, check your title and URL");
+  }
+}
+  matching("really, really, really long title that will be chopped off", "example.com");
+
+</script>
+
+</body>
+</html>
