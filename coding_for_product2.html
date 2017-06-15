@@ -20,37 +20,32 @@ var titleURL = [
   }
 ];
     
-function matching(key, arr) {
-  if ((key.title == arr.title) && (key.link == arr.link)) {
-    key.title = arr.title;
-    key.link = arr.link;
-    if (key.title.length > 50) {
-      key.title = key.title.substring(0, 50) + '...';
-      console.log('<a href="' + key.link + '">'  + key.title + '</a>');
+function matching(obj) {
+  for (var j = 0; j < titleURL.length; j++) {
+  if ((obj.title == titleURL[j].title) && (obj.link == titleURL[j].link)) {
+    obj.title = titleURL[j].title;
+    obj.link = titleURL[j].link;          
+    if (obj.title.length > 50) {
+      obj.title = obj.title.substring(0, 50) + '...';
+      console.log('<a href="' + obj.link + '">'  + obj.title + '</a>');
     }
     else {
-          console.log('<a href="' + key.link + '">'  + key.title + '</a>');
+      console.log('<a href="' + obj.link + '">'  + obj.title + '</a>');
     }
   }
-
+}
 }
 
-var keyValue1 = {title: 'Github', link: 'github.com'};
-var keyValue2 = {title: 'Google', link: 'google.com'};
-var keyValue3 = {title: 'really, really, really long title that will be chopped off', link: 'example.com'};
-
-function checkEach(value, arr) {
-	for (var i = 0; i < arr.length; i++) {
-		matching(value, arr[i]);
+function checkAll(array) {
+	for (var i = 0; i < array.length; i++) {
+		matching(array[i]);
     }
 }
-
-checkEach(keyValue1, titleURL);
-checkEach(keyValue2, titleURL);
-checkEach(keyValue3, titleURL);
-
-
+    
+checkAll(titleURL);
+    
 </script>
 
 </body>
 </html>
+`
