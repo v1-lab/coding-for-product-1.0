@@ -13,8 +13,6 @@ var titleURL =
     
 function matching(obj) {
   if ((obj.title == titleURL.title) && (obj.link == titleURL.link)) {
-    obj.title = titleURL.title;
-    obj.link = titleURL.link;
     if (obj.title.length > 50) {
       obj.title = obj.title.substring(0, 50) + '...';
       console.log('<a href="' + obj.link + '">'  + obj.title + '</a>');

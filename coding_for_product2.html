@@ -22,9 +22,7 @@ var titleURL = [
     
 function matching(obj) {
   for (var j = 0; j < titleURL.length; j++) {
-  if ((obj.title == titleURL[j].title) && (obj.link == titleURL[j].link)) {
-    obj.title = titleURL[j].title;
-    obj.link = titleURL[j].link;          
+  if ((obj.title == titleURL[j].title) && (obj.link == titleURL[j].link)) {          
     if (obj.title.length > 50) {
       obj.title = obj.title.substring(0, 50) + '...';
       console.log('<a href="' + obj.link + '">'  + obj.title + '</a>');
